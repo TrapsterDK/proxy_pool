@@ -65,9 +65,9 @@ class ConfigHandler(withMetaclass(Singleton)):
     def maxFailCount(self):
         return int(os.getenv("MAX_FAIL_COUNT", setting.MAX_FAIL_COUNT))
 
-    # @LazyProperty
-    # def maxFailRate(self):
-    #     return int(os.getenv("MAX_FAIL_RATE", setting.MAX_FAIL_RATE))
+    @LazyProperty
+    def maxFailRate(self):
+        return int(os.getenv("MAX_FAIL_RATE", setting.MAX_FAIL_RATE))
 
     @LazyProperty
     def poolSizeMin(self):
