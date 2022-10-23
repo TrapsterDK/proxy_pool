@@ -25,6 +25,14 @@ class ProxyFetcher(object):
     """
 
     @staticmethod
+    def freeProxyGithub():
+        url = "https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/http.txt"
+        html = WebRequest().get(url)
+        for line in html.text.splitlines():
+            yield line
+
+    '''
+    @staticmethod
     def freeProxy01():
         """
         站大爷 https://www.zdaye.com/dayProxy.html
@@ -160,6 +168,7 @@ class ProxyFetcher(object):
             r.text)
         for proxy in proxies:
             yield ':'.join(proxy)
+    '''
 
     # @staticmethod
     # def wallProxy01():
